@@ -1,18 +1,16 @@
-WARNING DO NOT SHARE BECAUSE IT HAS MY GOOGLE API CREDENTIALS & IDENTIFIANTS IN SOME COMMITS
+# Configurer l'application
 
-#Configurer l'application
-
-##Prérequis
+## Prérequis
 Avoir un compte Google. Vous pouvez en créer un gratuitement.
 
-##Création du tableur
+## Création du tableur
 1. Accédez au modèle : https://docs.google.com/spreadsheets/d/1z_C62pSJzeZUJbcnKUp7ii37ZnUCZWbHW7teQD9OGDQ/edit?usp=sharing
 2. Fichier -> Créer une copie
 3. Entrez un nom pour votre tableur et validez.
 4. Le tableur se compose de deux feuilles. Commencez par ajouter quelques catégories, puis vous pourrez saisir des entrées.
 5. Gardez le tableur ouvert pour la suite.
 
-##Configuration Google Cloud
+## Configuration Google Cloud
 1. Si vous n'avez pas de compte google, créez-en un gratuitement.
 2. Rendez-vous sur https://console.cloud.google.com
 3. Si on vous propose de payer ou d'essayer gratuitement, vous pouvez cliquer sur ignorer.
@@ -32,7 +30,7 @@ Avoir un compte Google. Vous pouvez en créer un gratuitement.
 17. Dans la barre de recherche, chercher Google Sheets API, cliquer sur Google Sheets API.
 18. Cliquer sur Activer (si c'est écrit Gérer, c'est que vous l'aviez déjà activé auparavant)
 
-##Paramètres de connexion
+## Paramètres de connexion
 1. Ouvrez l'application de comptes. Vous serez invité à renseigner des paramètres de connexion.
 2. Sur la page de votre tableur, copier la partie de l'URL située entre les deux derniers '/'
 3. Collez ce texte dans le champ Spreadsheet ID
