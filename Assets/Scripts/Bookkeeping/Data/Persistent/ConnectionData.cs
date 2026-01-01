@@ -12,6 +12,7 @@ namespace Bookkeeping
         private string credentialsFilePath;
         private string categoriesRange;
         private string entriesRange;
+        private string entriesSheets;
 
         public ConnectionData()
         {
@@ -23,7 +24,8 @@ namespace Bookkeeping
             spreadsheetId = PlayerPrefs.GetString("spreadsheetId", "");
             credentialsFilePath = PlayerPrefs.GetString("credentialsFilePath", "");
             categoriesRange = PlayerPrefs.GetString("categoriesRange", "'Catégories'!$A$2:$B$1000");
-            entriesRange = PlayerPrefs.GetString("entriesRange", "'Entrées'!$A$2:$J$1000");
+            entriesRange = PlayerPrefs.GetString("entriesRange", "$A$2:$J$1000");
+            entriesSheets = PlayerPrefs.GetString("entriesSheets", "2025");
         }
 
         public string SpreadsheetId
@@ -66,6 +68,17 @@ namespace Bookkeeping
             {
                 entriesRange = value;
                 PlayerPrefs.SetString("entriesRange", entriesRange);
+                PlayerPrefs.Save();
+            }
+        }
+
+        public string EntriesSheets
+        {
+            get => entriesSheets;
+            set
+            {
+                entriesSheets = value;
+                PlayerPrefs.SetString("entriesSheets", entriesSheets);
                 PlayerPrefs.Save();
             }
         }

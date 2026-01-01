@@ -85,9 +85,12 @@ namespace Bookkeeping
                 values.Add(rowValues);
             }
 
-            string range = "'Entrées'!I2:I" + (values.Count + 1);
-
-            sheetConnector.WriteData(range, values);
+            string[] sheetNames = connectionData.EntriesSheets.Split(',');
+            foreach(string sheetName in sheetNames)
+            {
+                string range = "'"+sheetName+"'!I2:I" + (values.Count + 1);
+                sheetConnector.WriteData(range, values);
+            }
 
             Debug.Log("Save complete!");
 

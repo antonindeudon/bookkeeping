@@ -18,7 +18,7 @@ namespace Bookkeeping
             data = new Data();
 
             ProcessCategories(connector.GetSheetRange(connectionData.CategoriesRange));
-            ProcessEntries(connector.GetSheetRange(connectionData.EntriesRange));
+            ProcessAllEntries(connectionData);
 
             return data;
         }
@@ -60,6 +60,16 @@ namespace Bookkeeping
                 //Create category
                 string parentName = line.Count < 2 ? null : line[1] as string;
                 data.allCategories.Add(new Category(line[0] as string, parentName));
+            }
+        }
+
+        private static void ProcessAllEntries(ConnectionData connectionData)
+        {
+            string[] sheetNames = connectionData.EntriesSheets.Split(',');
+            foreach(string sheetName in sheetNames)
+            {
+                string range = "'" + sheetName + "'!" + connectionData.EntriesRange;
+                ProcessEntries(connector.GetSheetRange(range));
             }
         }
 
